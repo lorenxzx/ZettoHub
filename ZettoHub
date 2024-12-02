@@ -1,13 +1,13 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Zetto Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Zetto", IntroEnabled = false})
+local Window = OrionLib:MakeWindow({Name = "Zetto Hub", HidePremium = false, SaveConfig = false, ConfigFolder = "Zetto", IntroEnabled = true, IntroText = "Zetto Hub"})
 
 
 
 local DiscordTab = Window:MakeTab({
     Name = "Discord",
-    Icon = "rbxassetid://70956959355798",
+    Icon = "rbxassetid://86871646125312",
     PremiumOnly = false
 })
 local Section = DiscordTab:AddSection({
@@ -25,6 +25,7 @@ DiscordTab:AddButton({
         })
     end
 })
+DiscordTab:AddLabel("Tem nada aqui")
 local OtimizarTab = Window:MakeTab({
 	Name = "Otimizar Jogo",
 	Icon = "rbxassetid://133828132785730",
@@ -33,19 +34,11 @@ local OtimizarTab = Window:MakeTab({
 local Section = OtimizarTab:AddSection({
 	Name = "Clique aqui para melhorar seus fps"
 })
+
 OtimizarTab:AddButton({
 	Name = "Boost FPS",
 	Callback = function()
-        for i,v in next, (workspace:GetDescendants()) do
-            if v:IsA("Part") then v.Material = Enum.Material.SmoothPlastic
-            end
-            end
-  	end    
-})
-OtimizarTab:AddButton({
-	Name = "Boost FPS total",
-	Callback = function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/8YZ2cc6V"))()
+
             local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
 local g = game
 local w = g.Workspace
@@ -129,4 +122,5 @@ FischTab:AddButton({
         loadstring(game:HttpGet("https://bonkhubloader.netlify.app",true))()
       end    
 })
+
 OrionLib:Init()
