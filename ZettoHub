@@ -1,7 +1,7 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/lorenxzx/Source/refs/heads/main/Source')))()
 
-local Window = OrionLib:MakeWindow({IntroNotification = false, Name = "Zetto Hub", HidePremium = false, SaveConfig = false, ConfigFolder = "Zetto", IntroEnabled = true, IntroText = "Zetto Hub", IntroIcon = "rbxassetid://87587894224849"})
+local Window = OrionLib:MakeWindow({IntroNotification = false, Name = "Zetto Hub", HidePremium = false, SaveConfig = false, ConfigFolder = "Zetto", IntroEnabled = true, IntroText = "Zetto Hub", IntroIcon = "rbxassetid://130774789202390"})
 
 local DiscordTab = Window:MakeTab({
     Name = "Discord",
