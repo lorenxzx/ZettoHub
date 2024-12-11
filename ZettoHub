@@ -1,5 +1,5 @@
 
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/lorenxzx/Source/refs/heads/main/Source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/lorenxzx/ZettoHub/refs/heads/main/source')))()
 
 local Window = OrionLib:MakeWindow({IntroNotification = false, Name = "Zetto Hub", HidePremium = false, SaveConfig = false, ConfigFolder = "Zetto", IntroEnabled = true, IntroText = "Zetto Hub", IntroIcon = "rbxassetid://130774789202390"})
 
