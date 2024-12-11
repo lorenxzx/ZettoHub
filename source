@@ -678,8 +678,8 @@ UICorner.Parent = ImageButton
 
 		
 		OrionLib:MakeNotification({
-			Name = "Hub Fechado",
-			Content = "Execute o Script novamente para abri-lo",
+			Name = "Interface Fechada",
+			Content = "Clique no Icon para abrir a interface",
 			Image = "rbxassetid://130774789202390",
 			Time = 5
 		})
