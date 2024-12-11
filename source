@@ -661,19 +661,19 @@ ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.145129248, 0, 0.130653262, 0)
-ImageButton.Size = UDim2.new(0, 44, 0, 44)
+ImageButton.Position = UDim2.new(0.182153389, 0, 0.0904522613, 0)
+ImageButton.Size = UDim2.new(0, 45, 0, 45)
 ImageButton.Image = "rbxassetid://87587894224849"
+
+UICorner.CornerRadius = UDim.new(1, 0)
+UICorner.Parent = ImageButton
 
 ImageButton.MouseButton1Down:Connect(function()
 	ImageButton:Destroy()
 	MainWindow.Visible = true
 	UIHidden = false
-
 end)
 
-UICorner.CornerRadius = UDim.new(1, 0)
-UICorner.Parent = ImageButton
 
 
 		
