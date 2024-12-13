@@ -661,11 +661,11 @@ ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.182153389, 0, 0.0904522613, 0)
-ImageButton.Size = UDim2.new(0, 45, 0, 45)
-ImageButton.Image = "rbxassetid://76535624714820"
+ImageButton.Position = UDim2.new(0.279498518, 0, 0.185929641, 0)
+ImageButton.Size = UDim2.new(0, 35, 0, 35)
+ImageButton.Image = "rbxassetid://131346101359661"
 
-UICorner.CornerRadius = UDim.new(1, 0)
+UICorner.CornerRadius = UDim.new(0, 35)
 UICorner.Parent = ImageButton
 
 ImageButton.MouseButton1Down:Connect(function()
@@ -680,7 +680,7 @@ end)
 		OrionLib:MakeNotification({
 			Name = "Interface Fechada",
 			Content = "Clique no Icon para abrir a interface",
-			Image = "rbxassetid://76535624714820",
+			Image = "rbxassetid://131346101359661",
 			Time = 5
 		})
 		WindowConfig.CloseCallback()
