@@ -680,7 +680,7 @@ end)
 		OrionLib:MakeNotification({
 			Name = "Interface Fechada",
 			Content = "Clique no Icon para abrir a interface",
-			Image = "rbxassetid://130774789202390",
+			Image = "rbxassetid://72796799782382",
 			Time = 5
 		})
 		WindowConfig.CloseCallback()
