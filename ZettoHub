@@ -10,7 +10,7 @@ local Tab = Window:MakeTab({
   PremiumOnly = false
 })
 local Section = Tab:AddSection({
-  Name = "Olá, " .. game.Players.LocalPlayer.Name
+  Name = "Olá, " .. game.Players.LocalPlayer.DisplayName
 })
 
 Section:AddTextbox({
