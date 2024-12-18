@@ -1,0 +1,122 @@
+local KeyInput = nil
+local KeyCorrect = { "slayerkey1" }
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/lorenxzx/KeySystem/refs/heads/main/key')))()
+local Window = OrionLib:MakeWindow({Name = "SlayerHub Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "Slayer Hub Key", IntroText = "Slayer Hub Key", IntroIcon = "rbxassetid://97007403462199"})
+OrionLib:MakeNotification({
+	Name = "Pegar key!",
+	Content = "Para pegar a key, basta entrar no nosso servidor do Discord.",
+	Image = "rbxassetid://73536379355418",
+	Time = 15
+})
+local Tab = Window:MakeTab({
+  Name = "Key",
+  Icon = "rbxassetid://91747479035188",
+  PremiumOnly = false
+})
+local Section = Tab:AddSection({
+  Name = "Olá, " .. game.Players.LocalPlayer.DisplayName
+})
+Tab:AddButton({
+    Name = "Discord",
+    Callback = function()
+        setclipboard("https://discord.gg/XqJxDEZcTN")
+        OrionLib:MakeNotification({
+            Name = "Link Copiado",
+            Content = "Link do servidor do Discord foi copiado",
+            Image = "rbxassetid://73536379355418",
+            Time = 5
+        })
+    end
+})
+
+-- Função para verificar se a chave já foi salva
+local function isKeyUsed()
+  return isfile("Slayer Hub Key/key.txt") -- Verifica se a chave já foi salva
+end
+
+-- Função para salvar a chave no arquivo
+local function saveKey(key)
+  writefile("Slayer Hub Key/key.txt", key) -- Salva a chave no arquivo
+end
+
+-- Função para verificar se a chave é válida
+local function isKeyValid(key)
+  for _, Keys in ipairs(KeyCorrect) do
+    if key == Keys then
+      return true
+    end
+  end
+  return false
+end
+
+-- Função para exibir notificação
+local function showNotification(title, content, duration)
+  OrionLib:MakeNotification({
+    Name = title,
+    Content = content,
+    Image = "rbxassetid://95193072751182",
+    Time = duration
+  })
+end
+
+-- Se a chave já foi usada, tenta carregar a chave salva
+if isKeyUsed() then
+  local savedKey = readfile("Slayer Hub Key/key.txt")
+  if isKeyValid(savedKey) then
+    KeyInput = savedKey
+    showNotification("Key já usada!", "Sua chave já foi registrada, carregando UI.", 5)
+    wait(0.5)
+    OrionLib:Destroy()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/lorenxzx/ZettoHub/refs/heads/main/ZettoHub"))()-- AQUI
+  else
+    -- Solicitar nova chave
+    Section:AddTextbox({
+      Name = "Coloque a key aqui",
+      Default = "",
+      TextDisappear = true,
+      Callback = function(Value)
+        KeyInput = Value
+      end
+    })
+    Section:AddButton({
+      Name = "Verificar Key",
+      Callback = function()
+        if isKeyValid(KeyInput) then
+          saveKey(KeyInput) -- Salva a chave
+          showNotification("A key está correta!", "Sua key está correta, carregando UI", 5)
+          wait(3)
+          OrionLib:Destroy()
+          loadstring(game:HttpGet("https://raw.githubusercontent.com/lorenxzx/ZettoHub/refs/heads/main/ZettoHub"))()
+        else
+          showNotification("A key não está correta!", "Certifique-se de que está colocando a Key correta.", 8)
+        end
+      end
+    })
+  end
+else
+  -- Solicitar chave para primeira vez
+  Section:AddTextbox({
+    Name = "Coloque a key aqui",
+    Default = "",
+    TextDisappear = true,
+    Callback = function(Value)
+      KeyInput = Value
+    end
+  })
+  Section:AddButton({
+    Name = "Verificar Key",
+    Callback = function()
+      if isKeyValid(KeyInput) then
+        saveKey(KeyInput) -- Salva a chave
+        showNotification("A key está correta!", "Sua key está correta, carregando UI", 5)
+        wait(3)
+        OrionLib:Destroy()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/FJN19-dev/Slayer/refs/heads/main/Slayer"))()-- AQUI
+      else
+        showNotification("A key não está correta!", "Certifique-se de que está colocando a Key correta.", 8)
+      end
+    end
+  })
+end
+
+OrionLib:Init()
