@@ -1,47 +1,4 @@
-local KeyInput = nil
-local KeyCorrect = {
-  "teste"
-}
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/lorenxzx/KeySystem/refs/heads/main/key')))()
-local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Key System Zetto Hub", IntroIcon = "rbxassetid://131346101359661"})
-local Tab = Window:MakeTab({
-  Name = "Key",
-  Icon = "rbxassetid://91747479035188",
-  PremiumOnly = false
-})
-local Section = Tab:AddSection({
-  Name = "Olá, " .. game.Players.LocalPlayer.DisplayName
-})
-
-Section:AddTextbox({
-  Name = "Coloque a key aqui",
-  Default = "",
-  TextDisappear = true,
-  Callback = function(Value)
-    KeyInput = Value
-  end
-})
-Section:AddButton({
-  Name = "Verificar Key",
-  Callback = function()
-    OrionLib:MakeNotification({
-      Name = "Verificando Key",
-      Content = "Verificando se sua key está correta.",
-      Image = "rbxassetid://95193072751182",
-      Time = 3
-    })
-    wait(1)
-      for _, Keys in ipairs(KeyCorrect) do
-        if KeyInput == Keys then
-          OrionLib:MakeNotification({
-            Name = "A key está correta!",
-            Content = "Sua key está correta, carregando UI",
-            Image = "rbxassetid://95193072751182",
-            Time = 5
-          })
-          wait(3)
-          OrionLib:Destroy()
-          local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/lorenxzx/ZettoHub/refs/heads/main/source')))()
+ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/lorenxzx/ZettoHub/refs/heads/main/source')))()
 
           local Window = OrionLib:MakeWindow({IntroNotification = false, Name = "Zetto Hub", HidePremium = false, SaveConfig = false, ConfigFolder = "Zetto", IntroEnabled = true, IntroText = "Zetto Hub", IntroIcon = "rbxassetid://131346101359661"})
           
@@ -164,15 +121,3 @@ Section:AddButton({
           })
           
           OrionLib:Init()
-        else
-          OrionLib:MakeNotification({
-            Name = "A key não está correta!",
-            Content = "Certifique-se de que está colocando a Key correta.",
-            Image = "rbxassetid://95193072751182",
-            Time = 8
-          })
-        end
-      end
-  end
-})
-OrionLib:Init()
