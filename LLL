@@ -1,13 +1,8 @@
 local KeyInput = nil
 local KeyCorrect = { "teste" }
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/lorenxzx/KeySystem/refs/heads/main/key')))()
-local Window = OrionLib:MakeWindow({Name = "SlayerHub Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "Slayer Hub Key", IntroText = "Slayer Hub Key", IntroIcon = "rbxassetid://97007403462199"})
-OrionLib:MakeNotification({
-	Name = "Pegar key!",
-	Content = "Para pegar a key, basta entrar no nosso servidor do Discord.",
-	Image = "rbxassetid://73536379355418",
-	Time = 15
-})
+local Window = OrionLib:MakeWindow({Name = "Zetto Hub Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "Zetto Hub Key", IntroText = "Zetto Hub Key", IntroIcon = "rbxassetid://131346101359661"})
+
 local Tab = Window:MakeTab({
   Name = "Key",
   Icon = "rbxassetid://91747479035188",
@@ -16,27 +11,15 @@ local Tab = Window:MakeTab({
 local Section = Tab:AddSection({
   Name = "Olá, " .. game.Players.LocalPlayer.DisplayName
 })
-Tab:AddButton({
-    Name = "Discord",
-    Callback = function()
-        setclipboard("https://discord.gg/XqJxDEZcTN")
-        OrionLib:MakeNotification({
-            Name = "Link Copiado",
-            Content = "Link do servidor do Discord foi copiado",
-            Image = "rbxassetid://73536379355418",
-            Time = 5
-        })
-    end
-})
 
 -- Função para verificar se a chave já foi salva
 local function isKeyUsed()
-  return isfile("Slayer Hub Key/key.txt") -- Verifica se a chave já foi salva
+  return isfile("Zetto Hub Key/key.txt") -- Verifica se a chave já foi salva
 end
 
 -- Função para salvar a chave no arquivo
 local function saveKey(key)
-  writefile("Slayer Hub Key/key.txt", key) -- Salva a chave no arquivo
+  writefile("Zetto Hub Key/key.txt", key) -- Salva a chave no arquivo
 end
 
 -- Função para verificar se a chave é válida
@@ -61,7 +44,7 @@ end
 
 -- Se a chave já foi usada, tenta carregar a chave salva
 if isKeyUsed() then
-  local savedKey = readfile("Slayer Hub Key/key.txt")
+  local savedKey = readfile("Zetto Hub Key/key.txt")
   if isKeyValid(savedKey) then
     KeyInput = savedKey
     showNotification("Key já usada!", "Sua chave já foi registrada, carregando UI.", 5)
