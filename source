@@ -603,6 +603,27 @@ function OrionLib:MakeWindow(WindowConfig)
 		Size = UDim2.new(0, 615, 0, 344),
 		ClipsDescendants = true
 	}), {
+		local ScreenGui = Instance.new("ScreenGui")
+local TextBox = Instance.new("TextBox")
+local UICorner = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextBox.Parent = ScreenGui
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.295722723, 0, 0.444723606, 0)
+TextBox.Size = UDim2.new(0, 120, 0, 28)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+
+UICorner.Parent = TextBox
 		--SetProps(MakeElement("Image", "rbxassetid://3523728077"), {
 		--	AnchorPoint = Vector2.new(0.5, 0.5),
 		--	Position = UDim2.new(0.5, 0, 0.5, 0),
@@ -661,26 +682,26 @@ ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.279498518, 0, 0.185929641, 0)
-ImageButton.Size = UDim2.new(0, 35, 0, 35)
-ImageButton.Image = "rbxassetid://131346101359661"
-
-UICorner.CornerRadius = UDim.new(0, 35)
-UICorner.Parent = ImageButton
+ImageButton.Position = UDim2.new(0.145129248, 0, 0.130653262, 0)
+ImageButton.Size = UDim2.new(0, 44, 0, 44)
+ImageButton.Image = "rbxassetid://97007403462199"
 
 ImageButton.MouseButton1Down:Connect(function()
 	ImageButton:Destroy()
 	MainWindow.Visible = true
 	UIHidden = false
+
 end)
 
+UICorner.CornerRadius = UDim.new(1, 0)
+UICorner.Parent = ImageButton
 
 
 		
 		OrionLib:MakeNotification({
 			Name = "Interface Fechada",
 			Content = "Clique no Icon para abrir a interface",
-			Image = "rbxassetid://131346101359661",
+			Image = "rbxassetid://78162744063373",
 			Time = 5
 		})
 		WindowConfig.CloseCallback()
