@@ -1738,7 +1738,27 @@ end)
 		end
 		return ElementFunction   
 	end 
-    
+    local ScreenGui = Instance.new("ScreenGui")
+local TextBox = Instance.new("TextBox")
+local UICorner = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextBox.Parent = ScreenGui
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.295722723, 0, 0.444723606, 0)
+TextBox.Size = UDim2.new(0, 120, 0, 28)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+
+UICorner.Parent = TextBox
 	
 	return TabFunction
 end   
